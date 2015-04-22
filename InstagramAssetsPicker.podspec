@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "InstagramAssetsPicker"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A assets picker like Instagram with photo and video crop"
 
   s.homepage         = "https://github.com/JGINGIT/InstagramAssetsPicker"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "JG" => "jezzegoo@gmail.com" }
-  s.source           = { :git => "https://github.com/CodyKolodziejzyk/InstagramAssetsPicker.git" }
+  s.source           = { :git => "https://github.com/CodyKolodziejzyk/InstagramAssetsPicker.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
