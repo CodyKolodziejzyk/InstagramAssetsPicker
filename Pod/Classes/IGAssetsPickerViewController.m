@@ -222,6 +222,10 @@
 
 - (void)cropAction {
     
+    if ([self.delegate respondsToSelector:@selector(assetsPickerBeganCropping:)]) {
+        [self.delegate assetsPickerBeganCropping:self];
+    }
+    
 #ifdef IG_CROP_IMMEDIATELY
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(assetsPicker:finishedCroppingWithAsset:)])

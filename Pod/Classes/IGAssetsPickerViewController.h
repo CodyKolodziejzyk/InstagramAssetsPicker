@@ -16,6 +16,9 @@
 //get crop region , range:0-1, you can crop when user post for good UE
 -(void)IGAssetsPickerGetCropRegion:(CGRect)rect withAlAsset:(ALAsset *)asset;
 
+// gets called when the user clicks 'ok' after selecting an asset
+- (void)assetsPickerBeganCropping:(id)picker;
+
 //crop immediatly
 - (void)assetsPicker:(id)picker finishedCroppingWithAsset:(id)asset;
 

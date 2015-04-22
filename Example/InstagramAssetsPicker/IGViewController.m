@@ -46,7 +46,12 @@
 
 #pragma mark - IGAssetsPickerDelegate
 
--(void)IGAssetsPickerFinishCroppingToAsset:(id)asset
+- (void)assetsPickerBeganCropping:(id)picker
+{
+    NSLog(@"Began cropping");
+}
+
+- (void)assetsPicker:(id)picker finishedCroppingWithAsset:(id)asset
 {
     if([asset isKindOfClass:[UIImage class]])//photo
     {
