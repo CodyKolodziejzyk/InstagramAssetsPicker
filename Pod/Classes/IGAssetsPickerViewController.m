@@ -224,10 +224,10 @@
     
 #ifdef IG_CROP_IMMEDIATELY
     
-    if(self.delegate && [self.delegate respondsToSelector:@selector(IGAssetsPickerFinishCroppingToAsset:)])
+    if(self.delegate && [self.delegate respondsToSelector:@selector(assetsPicker:finishedCroppingWithAsset:)])
     {
         id asset = [self.cropView cropAsset];
-        [self.delegate IGAssetsPickerFinishCroppingToAsset:asset];
+        [self.delegate assetsPicker:self finishedCroppingWithAsset:asset];
         
     }
 #else

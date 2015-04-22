@@ -12,11 +12,12 @@
 
 @protocol IGAssetsPickerDelegate <NSObject>
 
+@optional
 //get crop region , range:0-1, you can crop when user post for good UE
 -(void)IGAssetsPickerGetCropRegion:(CGRect)rect withAlAsset:(ALAsset *)asset;
 
 //crop immediatly
--(void)IGAssetsPickerFinishCroppingToAsset:(id)asset;
+- (void)assetsPicker:(id)picker finishedCroppingWithAsset:(id)asset;
 
 @end
 
