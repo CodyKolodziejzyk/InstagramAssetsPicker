@@ -291,10 +291,12 @@
     
     //FIXME:
     __block BOOL finished = NO;
+    __weak id weakMovieWriter = movieWriter;
     [movieWriter setCompletionBlock:^{
         NSLog(@"Completed Successfully");
-        [movieWriter finishRecording];
-        [filter removeTarget:movieWriter];
+        __strong id strongMovieWritier = weakMovieWriter;
+        [strongMovieWritier finishRecording];
+        [filter removeTarget:strongMovieWritier];
         finished = YES;
     }];
     while (!finished);

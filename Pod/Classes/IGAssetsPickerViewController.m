@@ -72,7 +72,8 @@
     
     ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop) {
         
-        ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allAssets];
+        // Only videos
+        ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allVideos];
         [group setAssetsFilter:onlyPhotosFilter];
         if ([group numberOfAssets] > 0)
         {
