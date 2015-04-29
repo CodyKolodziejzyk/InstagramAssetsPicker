@@ -230,9 +230,12 @@
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(assetsPicker:finishedCroppingWithAsset:)])
     {
-        id asset = [self.cropView cropAsset];
-        [self.delegate assetsPicker:self finishedCroppingWithAsset:asset];
-        
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            id asset = [self.cropView cropAsset];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate assetsPicker:self finishedCroppingWithAsset:asset];
+            });
+        });
     }
 #else
     if(self.delegate && [self.delegate respondsToSelector:@selector(IGAssetsPickerGetCropRegion: withAlAsset:)])
@@ -240,10 +243,8 @@
         CGRect rect = [self.cropView getCropRegion];
         [self.delegate IGAssetsPickerGetCropRegion:rect withAlAsset:self.cropView.alAsset];
     }
-
 #endif
 
-    [self backAction];
 }
 
 - (void)panGestureAction:(UIPanGestureRecognizer *)panGesture {

@@ -48,7 +48,10 @@
 
 - (void)assetsPickerBeganCropping:(id)picker
 {
-    NSLog(@"Began cropping");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"grin" message:@"grin" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:@"ok", nil];
+        [al show];
+    });
 }
 
 - (void)assetsPicker:(id)picker finishedCroppingWithAsset:(id)asset
