@@ -21,4 +21,6 @@
 //for lately crop
 +(id)cropAlAsset:(ALAsset *)asset withRegion:(CGRect)rect;
 
+- (void)stop;
+
 @end

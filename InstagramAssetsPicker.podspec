@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "InstagramAssetsPicker"
-  s.version          = "0.1.4"
+  s.version          = "0.1.5"
   s.summary          = "A assets picker like Instagram with photo and video crop"
 
   s.homepage         = "https://github.com/JGINGIT/InstagramAssetsPicker"

@@ -22,6 +22,7 @@
 //crop immediatly
 - (void)assetsPicker:(id)picker finishedCroppingWithAsset:(id)asset;
 
+
 @end
 
 @interface IGAssetsPickerViewController : UIViewController

@@ -183,8 +183,14 @@
 
 - (id)cropAsset
 {
+    [self.videoPlayer stop];
     return [IGCropView cropAlAsset:self.alAsset withRegion:[self getCropRegion]];
 
+}
+
+- (void)stop
+{
+    [self.videoPlayer pause];
 }
 
 
